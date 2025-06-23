@@ -1,0 +1,1413 @@
+/*
+Theme Name: My Custom Theme
+Author: Leya
+Description: Converted full-stack site to WP theme
+Version: 1.0
+*/
+    
+    /* Custom Variables */
+        :root {
+            --coral: #FF6F61;
+            --hot-pink: #FF5E78;
+            --teal: #2EC4B6;
+            --mustard: #E9C46A;
+            --dusty-blue: #83A2C3;
+            --kraft-brown: #B68D40;
+            --light-purple: #9D8DF1;
+            --sage-green: #8DB596;
+            --peach: #FFBE98;
+            --mint: #98D8C8;
+            --lavender: #C8A2C8;
+        }
+        
+        /* Base Styles */
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0f0f0' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        .handwritten {
+            font-family: 'Shadows Into Light', cursive;
+        }
+        
+        .handwritten-alt {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
+        
+        .handwritten-bold {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .handwritten-casual {
+            font-family: 'Patrick Hand', cursive;
+        }
+        
+        .handwritten-neat {
+            font-family: 'Caveat', cursive;
+        }
+        
+        .handwritten-loose {
+            font-family: 'Indie Flower', cursive;
+        }
+        
+        .handwritten-round {
+            font-family: 'Kalam', cursive;
+        }
+        
+        .typewriter {
+            font-family: 'Special Elite', cursive;
+        }
+        
+        .serif {
+            font-family: 'Lora', serif;
+        }
+        
+        /* Scrapbook Elements */
+        .sticky-note {
+            position: relative;
+            padding: 1.5rem;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transform: rotate(1deg);
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-note:hover {
+            transform: rotate(-1deg) translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .sticky-note::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 20px;
+            background-color: rgba(0,0,0,0.1);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 1rem;
+            padding-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transform: rotate(2deg);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .polaroid-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .torn-paper {
+            position: relative;
+            background: white;
+        }
+        
+        .torn-paper::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 C30,20 70,0 100,10 L100,20 L0,20 Z' fill='white'/%3E%3C/svg%3E");
+            background-size: 100px 20px;
+            background-repeat: repeat-x;
+        }
+        
+        .washi-tape {
+            position: relative;
+        }
+        
+        .washi-tape::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--teal);
+            opacity: 0.7;
+            transform: rotate(-2deg);
+            z-index: -1;
+        }
+        
+        .washi-tape-right::before {
+            left: auto;
+            right: 20px;
+            background-color: var(--hot-pink);
+            transform: rotate(2deg);
+        }
+        
+        .washi-tape-bottom::before {
+            top: auto;
+            bottom: -15px;
+            background-color: var(--mustard);
+        }
+        
+        .taped-photo {
+            position: relative;
+        }
+        
+        .taped-photo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30%;
+            height: 20px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Doodle Elements */
+        .doodle-star {
+            position: relative;
+        }
+        
+        .doodle-star::after {
+            content: '★';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--hot-pink);
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        
+        .doodle-heart {
+            position: relative;
+        }
+        
+        .doodle-heart::after {
+            content: '♥';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--hot-pink);
+            bottom: -10px;
+            right: -10px;
+            transform: rotate(-5deg);
+        }
+        
+        .doodle-arrow {
+            position: relative;
+        }
+        
+        .doodle-arrow::after {
+            content: '→';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--teal);
+            bottom: 5px;
+            right: -25px;
+        }
+        
+        .doodle-circle {
+            position: relative;
+        }
+        
+        .doodle-circle::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--coral);
+            border-radius: 50%;
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        
+        /* Navigation & Layout */
+        .nav-item {
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .nav-item:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+        
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Hero section styles */
+        .hero-title {
+            position: relative;
+            display: inline-block;
+            transform: rotate(-2deg);
+            z-index: 2;
+        }
+        
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: var(--teal);
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .hero-subtitle {
+            position: relative;
+            display: inline-block;
+            transform: rotate(1deg);
+            margin-top: -10px;
+        }
+        
+        /* Tape styles */
+        .tape {
+            position: absolute;
+            height: 30px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .tape-top-left {
+            width: 40%;
+            top: -15px;
+            left: 10px;
+            transform: rotate(-5deg);
+        }
+        
+        .tape-top-right {
+            width: 40%;
+            top: -15px;
+            right: 10px;
+            transform: rotate(5deg);
+        }
+        
+        .tape-bottom-left {
+            width: 40%;
+            bottom: -15px;
+            left: 10px;
+            transform: rotate(5deg);
+        }
+        
+        .tape-bottom-right {
+            width: 40%;
+            bottom: -15px;
+            right: 10px;
+            transform: rotate(-5deg);
+        }
+        
+        /* Sticker elements */
+        .sticker {
+            position: absolute;
+            z-index: 2;
+            transform: rotate(10deg);
+            transition: all 0.3s ease;
+        }
+
+        .sticker:hover {
+            transform: rotate(0) scale(1.1);
+        }
+
+        .sticker-star {
+            color: var(--hot-pink);
+            font-size: 2.5rem;
+        }
+
+        .sticker-heart {
+            color: var(--hot-pink);
+            font-size: 2.5rem;
+        }
+
+        .sticker-arrow {
+            color: var(--teal);
+            font-size: 2.5rem;
+        }
+
+        .sticker-circle {
+            width: 40px;
+            height: 40px;
+            border: 3px dashed var(--mustard);
+            border-radius: 50%;
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        /* Animations */
+        .float-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: floatIn 0.8s ease-out forwards;
+        }
+
+        @keyframes floatIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rotate-in {
+            opacity: 0;
+            transform: rotate(-5deg) scale(0.9);
+            animation: rotateIn 0.8s ease-out forwards;
+        }
+
+        @keyframes rotateIn {
+            0% {
+                opacity: 0;
+                transform: rotate(-5deg) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+        
+        /* Doodle underline */
+        .doodle-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .doodle-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='6' viewBox='0 0 100 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,3 C10,0 20,6 30,3 C40,0 50,6 60,3 C70,0 80,6 90,3 C95,1.5 100,4.5 100,3' stroke='%23FF5E78' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 6px;
+        }
+        
+        /* Handwritten marker styles */
+        .marker-underline {
+            position: relative;
+            display: inline;
+            z-index: 1;
+        }
+        
+        .marker-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--hot-pink);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .marker-underline-teal::after {
+            background-color: var(--teal);
+        }
+        
+        .marker-underline-mustard::after {
+            background-color: var(--mustard);
+        }
+        
+        /* Paper clip styles */
+        .paper-clip {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            border: 3px solid #888;
+            border-radius: 15px 15px 0 0;
+            top: -30px;
+            left: 20px;
+            transform: rotate(-10deg);
+            z-index: 2;
+        }
+        
+        .paper-clip::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            border: 3px solid #888;
+            border-radius: 10px 10px 0 0;
+            top: 10px;
+            left: 5px;
+        }
+        
+        .paper-clip-right {
+            left: auto;
+            right: 20px;
+            transform: rotate(10deg);
+        }
+        
+        /* Note paper styles */
+        .note-paper {
+            background-color: white;
+            padding: 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .note-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 100% 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .note-paper-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Notebook hole styles */
+        .notebook-holes {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            height: 100%;
+            width: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .notebook-hole {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Button styles */
+        .btn-submit {
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-submit:hover::before {
+            left: 0;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Form styles */
+        .form-container {
+            position: relative;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-input {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 5px;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.2);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Notecard styles */
+        .notecard {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .notecard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 100% 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .notecard-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Paperclip variations */
+        .paperclip-1 {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 30px;
+            height: 50px;
+            border: 3px solid #888;
+            border-radius: 15px 15px 0 0;
+            transform: rotate(-10deg);
+            z-index: 2;
+        }
+        
+        .paperclip-1::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 25px;
+            border: 3px solid #888;
+            border-radius: 10px 10px 0 0;
+            top: 10px;
+            left: 5px;
+        }
+        
+        .paperclip-2 {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 30px;
+            height: 50px;
+            border: 3px solid #888;
+            border-radius: 15px 15px 0 0;
+            transform: rotate(10deg);
+            z-index: 2;
+        }
+        
+        .paperclip-2::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 25px;
+            border: 3px solid #888;
+            border-radius: 10px 10px 0 0;
+            top: 10px;
+            left: 5px;
+        }
+        
+        /* Washi tape variations */
+        .washi-1 {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--hot-pink);
+            opacity: 0.7;
+            transform: rotate(-2deg);
+            z-index: 1;
+        }
+        
+        .washi-2 {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--teal);
+            opacity: 0.7;
+            transform: rotate(2deg);
+            z-index: 1;
+        }
+        
+        .washi-3 {
+            position: absolute;
+            bottom: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--mustard);
+            opacity: 0.7;
+            transform: rotate(2deg);
+            z-index: 1;
+        }
+        
+        .washi-4 {
+            position: absolute;
+            bottom: -15px;
+            right: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--light-purple);
+            opacity: 0.7;
+            transform: rotate(-2deg);
+            z-index: 1;
+        }
+        
+        /* Doodle variations */
+        .doodle-1 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: var(--hot-pink);
+            transform: rotate(15deg);
+        }
+        
+        .doodle-2 {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: var(--teal);
+            transform: rotate(-10deg);
+        }
+        
+        .doodle-3 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2rem;
+            color: var(--mustard);
+            transform: rotate(-15deg);
+        }
+        
+        .doodle-4 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 2rem;
+            color: var(--light-purple);
+            transform: rotate(10deg);
+        }
+        
+        /* Sticker variations */
+        .sticker-1 {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--hot-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Patrick Hand', cursive;
+            transform: rotate(15deg);
+            z-index: 2;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .sticker-2 {
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Patrick Hand', cursive;
+            transform: rotate(-15deg);
+            z-index: 2;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Post-it note corner fold */
+        .corner-fold {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 30px 30px;
+            border-color: transparent transparent rgba(0,0,0,0.1) transparent;
+        }
+        
+        /* Coffee stain */
+        .coffee-stain {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(139, 69, 19, 0.1);
+            z-index: 0;
+        }
+        
+        .coffee-stain-1 {
+            top: 20px;
+            right: 20px;
+            transform: scale(0.8);
+        }
+        
+        .coffee-stain-2 {
+            bottom: 20px;
+            left: 20px;
+            transform: scale(1.2);
+        }
+        
+        /* Handwritten notes */
+        .handwritten-note {
+            position: absolute;
+            font-family: 'Gloria Hallelujah', cursive;
+            color: var(--hot-pink);
+            transform: rotate(-5deg);
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+        
+        .handwritten-note-1 {
+            top: 10px;
+            right: 10px;
+        }
+        
+        .handwritten-note-2 {
+            bottom: 10px;
+            left: 10px;
+        }
+        
+        /* Form validation styles */
+        .form-input.error {
+            border-color: var(--hot-pink);
+        }
+        
+        .error-message {
+            color: var(--hot-pink);
+            font-size: 0.9rem;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            font-family: 'Patrick Hand', cursive;
+        }
+        
+        /* Success message styles */
+        .success-message {
+            background-color: var(--teal);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            text-align: center;
+            display: none;
+        }
+        
+        /* Polaroid stack */
+        .polaroid-stack {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .polaroid-item {
+            position: absolute;
+            background: white;
+            padding: 1rem;
+            padding-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            width: 200px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .polaroid-item:nth-child(1) {
+            top: 20px;
+            left: 20px;
+            transform: rotate(-5deg);
+            z-index: 3;
+        }
+        
+        .polaroid-item:nth-child(2) {
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(3deg);
+            z-index: 2;
+        }
+        
+        .polaroid-item:nth-child(3) {
+            top: 30px;
+            right: 20px;
+            transform: rotate(7deg);
+            z-index: 1;
+        }
+        
+        .polaroid-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .polaroid-stack {
+                height: 400px;
+            }
+            
+            .polaroid-item {
+                width: 150px;
+                height: 200px;
+            }
+            
+            .polaroid-item:nth-child(1) {
+                top: 10px;
+                left: 10px;
+            }
+            
+            .polaroid-item:nth-child(3) {
+                top: 20px;
+                right: 10px;
+            }
+        }
+        
+        /* Pen doodle */
+        .pen-doodle {
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            background-color: var(--hot-pink);
+            border-radius: 10px;
+            transform: rotate(45deg);
+            z-index: 2;
+        }
+        
+        .pen-doodle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid var(--hot-pink);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+        
+        .pen-doodle::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 60%;
+            height: 10px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 5px;
+        }
+        
+        /* Squiggly underline */
+        .squiggly-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .squiggly-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='6' viewBox='0 0 100 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,3 C10,0 20,6 30,3 C40,0 50,6 60,3 C70,0 80,6 90,3 C95,1.5 100,4.5 100,3' stroke='%232EC4B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 6px;
+        }
+        
+        /* Floating elements */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(2deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+        
+        .floating-alt {
+            animation: floating-alt 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating-alt {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(-2deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+        
+        /* Confetti animation for success */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--hot-pink);
+            opacity: 0.8;
+            animation: confetti-fall 3s linear forwards;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Form container with notecard style */
+        .form-notecard {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-notecard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 100% 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .form-notecard-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Notebook binding */
+        .notebook-binding {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 30px;
+            background-color: var(--hot-pink);
+            z-index: 1;
+        }
+        
+        .notebook-binding::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 15px 15px;
+        }
+        
+        /* Notebook with binding */
+        .notebook {
+            background-color: white;
+            padding: 2rem 2rem 2rem 3rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .notebook::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 100% 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .notebook-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Spiral binding */
+        .spiral-binding {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .spiral-loop {
+            width: 15px;
+            height: 15px;
+            border: 3px solid #888;
+            border-radius: 50%;
+        }
+
+        /* Always keep "Get Unstuck" in pink and title case */
+.get-unstuck-pink,
+.handwritten-bold,
+.hero-title {
+    color: #FF5E78 !important;
+    font-family: 'Pacifico', cursive;
+    text-transform: capitalize;
+}
+.semi-handwritten-bold{
+    font-family: 'Pacifico', cursive;
+    text-transform: capitalize;
+}
+
+/* Pink sticky note call to action */
+.sticky-note.bg-\[\#FF5E78\] {
+    background: #FF5E78 !important;
+    color: #fff !important;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(255,94,120,0.10), 0 1.5px 0 #e04a67 inset;
+    padding: 2.2rem 2rem 2rem 2rem;
+    margin-bottom: 2.5rem;
+    font-family: 'Gloria Hallelujah', cursive;
+    position: relative;
+    z-index: 2;
+}
+
+.sticky-note.bg-\[\#FF5E78\] .handwritten-bold {
+    color: #fff !important;
+    background: linear-gradient(90deg, #fff7e0 0%, #FF5E78 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive font for sticky note */
+@media (max-width: 600px) {
+    .sticky-note.bg-\[\#FF5E78\] p {
+        font-size: 1.2rem;
+        padding: 1.2rem 0.5rem;
+    }
+}
+
+/* Optional: subtle tape or doodle for sticky note */
+.sticky-note.bg-\[\#FF5E78\]::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 60px;
+    height: 22px;
+    background: #fff7e0;
+    opacity: 0.7;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+/* --- Dark mode styles: Match index.css exactly --- */
+body.dark-mode,
+html body.dark-mode,
+body.dark-mode * {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Container backgrounds */
+body.dark-mode .page-container,
+body.dark-mode main,
+body.dark-mode .notebook,
+body.dark-mode .sticky-note,
+body.dark-mode .polaroid,
+body.dark-mode .torn-paper,
+body.dark-mode .taped-photo,
+body.dark-mode .journal-page,
+body.dark-mode .quote-card,
+body.dark-mode .podcast-player,
+html body.dark-mode .page-container,
+html body.dark-mode main {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #333333 !important;
+}
+
+/* All Tailwind color classes become monochrome */
+body.dark-mode .bg-\[\#FF5E78\],
+body.dark-mode .bg-\[\#FF6F61\],
+body.dark-mode .bg-\[\#2EC4B6\],
+body.dark-mode .bg-\[\#E9C46A\],
+body.dark-mode .bg-\[\#83A2C3\],
+body.dark-mode [class*="bg-"],
+html body.dark-mode .bg-\[\#FF5E78\],
+html body.dark-mode .bg-\[\#FF6F61\] { 
+    background: #2a2a2a !important; 
+    color: #ffffff !important;
+}
+
+/* Navigation and buttons */
+body.dark-mode .nav-item,
+body.dark-mode button,
+body.dark-mode .custom-play-btn,
+body.dark-mode .btn-submit,
+html body.dark-mode .nav-item,
+html body.dark-mode button {
+    background: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+body.dark-mode .nav-item:hover,
+body.dark-mode button:hover,
+body.dark-mode .custom-play-btn:hover,
+body.dark-mode .btn-submit:hover {
+    background: #444444 !important;
+    color: #ffffff !important;
+}
+
+/* Text colors - all become white */
+body.dark-mode .text-\[\#FF5E78\],
+body.dark-mode .text-\[\#2EC4B6\],
+body.dark-mode .text-\[\#E9C46A\],
+body.dark-mode .text-\[\#83A2C3\],
+body.dark-mode .text-\[\#FF6F61\],
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-600,
+body.dark-mode .text-gray-500,
+body.dark-mode [class*="text-"],
+html body.dark-mode .text-\[\#FF5E78\],
+html body.dark-mode .text-\[\#2EC4B6\] {
+    color: #ffffff !important;
+}
+
+/* White backgrounds become dark */
+body.dark-mode .bg-white,
+body.dark-mode .bg-gray-200,
+html body.dark-mode .bg-white {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+/* Images and borders */
+body.dark-mode img {
+    border-color: #444444 !important;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+/* Decorative elements */
+body.dark-mode .decorative-circle {
+    background: #333333 !important;
+    opacity: 0.3 !important;
+}
+
+/* Form elements */
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #777777 !important;
+    background: #333333 !important;
+}
+
+/* Links */
+body.dark-mode a {
+    color: #ffffff !important;
+}
+
+body.dark-mode a:hover {
+    color: #cccccc !important;
+}
+
+/* Shadows become darker */
+body.dark-mode .shadow-md,
+body.dark-mode .shadow-lg {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.8) !important;
+}
+
+/* Header and footer */
+body.dark-mode header,
+body.dark-mode footer {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+}
+
+/* Dark mode toggle specific styling */
+body.dark-mode #darkModeToggle {
+    background: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+/* Override any remaining colored elements */
+body.dark-mode * {
+    border-color: #444444 !important;
+}
+
+body.dark-mode *:not(img):not(svg):not(path) {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+/* --- Force all Tailwind arbitrary color backgrounds/text to monochrome in dark mode --- */
+body.dark-mode [class*="bg-[#"] {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+body.dark-mode [class*="text-[#"] {
+    color: #fff !important;
+}
+body.dark-mode [class*="border-[#"] {
+    border-color: #444 !important;
+}
+
+/* --- Dark mode toggle button style --- */
+.dark-toggle-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: #f3f3f3;
+    color: #222;
+    border: none;
+    border-radius: 9999px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
+}
+.dark-toggle-btn:hover {
+    background: #FF5E78;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .dark-toggle-btn { right: 1rem; top: 1rem; }
+}

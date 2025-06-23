@@ -1,0 +1,132 @@
+body {
+    font-family: 'Quicksand', 'Patrick Hand', 'Shadows Into Light', cursive, sans-serif;
+    background: #f7f7f7;
+    color: #5c4f4f;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+body.dark-mode {
+    background: #222;
+    color: #faf6f1;
+}
+/* Get Unstuck Admin signup Page Styles */
+.signup-logo {
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    font-size: 60px;         /* Matches text-5xl/md:text-6xl */
+    color: #FF5E78;                 
+    margin: 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .signup-logo {
+        font-size: 3.75rem;           /* md:text-6xl */
+    }
+}
+.signup-sub {
+    font-family: 'Patrick Hand', 'Quicksand', cursive;
+    color: #2EC4B6;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.signup-form {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+    max-width: 400px;
+    width: 100%;
+    border-top: 8px solid #FF5E78;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+}
+body.dark-mode .signup-form {
+    background: #333;
+}
+.signup-form label {
+    font-family: 'Patrick Hand', 'Quicksand', cursive;
+    color: #2EC4B6;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.signup-form input[type="text"],
+.signup-form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    transition: border 0.2s;
+    background: rgba(255,255,255,0.95);
+}
+body.dark-mode .signup-form input[type="text"],
+body.dark-mode .signup-form input[type="password"] {
+    background: #444;
+    color: #faf6f1;
+    border: 1px solid #2EC4B6;
+}
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus {
+    border-color: #2EC4B6;
+    outline: none;
+}
+.signup-form button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background: #FF5E78;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Patrick Hand', 'Quicksand', cursive;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px rgba(255,94,120,0.15);
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.signup-form button[type="submit"]:hover {
+    background: #FF6F61;
+}
+.signup-form .error {
+    background: #FF5E78;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.signup-bg {
+    background: #f7f7f7;
+}
+body.dark-mode .signup-bg {
+    background: #222;
+}
+.dark-toggle-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: #f3f3f3;
+    color: #222;
+    border: none;
+    border-radius: 9999px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
+}
+.dark-toggle-btn:hover {
+    background: #FF5E78;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .dark-toggle-btn { right: 1rem; top: 1rem; }
+    .signup-form { padding: 1.5rem 0.5rem 1rem 0.5rem; }
+}

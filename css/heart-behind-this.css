@@ -1,0 +1,1026 @@
+/*
+Theme Name: My Custom Theme
+Author: Leya
+Description: Converted full-stack site to WP theme
+Version: 1.0
+*/
+        
+        /* Custom Variables */
+        :root {
+            --coral: #FF6F61;
+            --hot-pink: #FF5E78;
+            --teal: #2EC4B6;
+            --mustard: #E9C46A;
+            --dusty-blue: #83A2C3;
+            --kraft-brown: #B68D40;
+        }
+        
+        /* Base Styles */
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0f0f0' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        .handwritten {
+            font-family: 'Shadows Into Light', cursive;
+        }
+        
+        .handwritten-alt {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
+        
+        .handwritten-bold {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .handwritten-casual {
+            font-family: 'Patrick Hand', cursive;
+        }
+        
+        .typewriter {
+            font-family: 'Special Elite', cursive;
+        }
+        
+        .serif {
+            font-family: 'Lora', serif;
+        }
+        
+        /* Scrapbook Elements */
+        .sticky-note {
+            position: relative;
+            padding: 1.5rem;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transform: rotate(1deg);
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-note:hover {
+            transform: rotate(-1deg) translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .sticky-note::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 20px;
+            background-color: rgba(0,0,0,0.1);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 1rem;
+            padding-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transform: rotate(2deg);
+            transition: all 0.3s ease;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .torn-paper {
+            position: relative;
+            background: white;
+        }
+        
+        .torn-paper::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 C30,20 70,0 100,10 L100,20 L0,20 Z' fill='white'/%3E%3C/svg%3E");
+            background-size: 100px 20px;
+            background-repeat: repeat-x;
+        }
+        
+        .washi-tape {
+            position: relative;
+        }
+        
+        .washi-tape::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--teal);
+            opacity: 0.7;
+            transform: rotate(-2deg);
+            z-index: -1;
+        }
+        
+        .washi-tape-right::before {
+            left: auto;
+            right: 20px;
+            background-color: var(--hot-pink);
+            transform: rotate(2deg);
+        }
+        
+        .washi-tape-bottom::before {
+            top: auto;
+            bottom: -15px;
+            background-color: var(--mustard);
+        }
+        
+        .taped-photo {
+            position: relative;
+        }
+        
+        .taped-photo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30%;
+            height: 20px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Doodle Elements */
+        .doodle-star {
+            position: relative;
+        }
+        
+        .doodle-star::after {
+            content: '★';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--hot-pink);
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        
+        .doodle-heart {
+            position: relative;
+        }
+        
+        .doodle-heart::after {
+            content: '♥';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--hot-pink);
+            bottom: -10px;
+            right: -10px;
+            transform: rotate(-5deg);
+        }
+        
+        .doodle-arrow {
+            position: relative;
+        }
+        
+        .doodle-arrow::after {
+            content: '→';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--teal);
+            bottom: 5px;
+            right: -25px;
+        }
+        
+        .doodle-circle {
+            position: relative;
+        }
+        
+        .doodle-circle::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--coral);
+            border-radius: 50%;
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        
+        /* Navigation & Layout */
+        .nav-item {
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .nav-item:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+        
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Value card styles */
+        .value-card {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero section styles */
+        .hero-title {
+            position: relative;
+            display: inline-block;
+            transform: rotate(-2deg);
+            z-index: 2;
+            font-size: 2.25rem;
+            font-weight: bold;
+            margin-bottom: 1.25rem;
+            letter-spacing: -1px;
+            font-family: 'Pacifico', cursive;
+            color: #FF5E78;
+        }
+        
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: var(--teal);
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .hero-subtitle {
+            position: relative;
+            display: inline-block;
+            transform: rotate(1deg);
+            margin-top: -10px;
+            font-size: 1.125rem;
+            margin-bottom: 1.30rem;
+            line-height: 1.7;
+        }
+        
+        /* Quote card styles */
+        .quote-card {
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            background: #83A2C3;
+            color: #fff;
+            border-radius: 10px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.3rem;
+            padding: 2rem 1.5rem;
+        }
+        
+        .quote-card::before {
+            content: '“';
+            font-size: 4rem;
+            color: #fff7e0;
+            opacity: 0.4;
+            position: absolute;
+            left: 1rem;
+            top: 0.5rem;
+        }
+        
+        .quote-card::after {
+            content: '”';
+            font-size: 4rem;
+            color: #fff7e0;
+            opacity: 0.4;
+            position: absolute;
+            right: 1rem;
+            bottom: 0.5rem;
+        }
+        
+        /* Journal page styles */
+        .journal-page {
+            background-color: white;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .journal-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 100% 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Notebook hole styles */
+        .notebook-holes {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            height: 100%;
+            width: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .notebook-hole {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Paper texture */
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0f0f0' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        /* Tape styles */
+        .tape {
+            position: absolute;
+            height: 30px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .tape-top-left {
+            width: 40%;
+            top: -15px;
+            left: 10px;
+            transform: rotate(-5deg);
+        }
+        
+        .tape-top-right {
+            width: 40%;
+            top: -15px;
+            right: 10px;
+            transform: rotate(5deg);
+        }
+        
+        .tape-bottom-left {
+            width: 40%;
+            bottom: -15px;
+            left: 10px;
+            transform: rotate(5deg);
+        }
+        
+        .tape-bottom-right {
+            width: 40%;
+            bottom: -15px;
+            right: 10px;
+            transform: rotate(-5deg);
+        }
+        
+        /* Sticker elements */
+        .sticker {
+            position: absolute;
+            z-index: 2;
+            transform: rotate(10deg);
+            transition: all 0.3s ease;
+        }
+
+        .sticker:hover {
+            transform: rotate(0) scale(1.1);
+        }
+
+        .sticker-star {
+            color: var(--hot-pink);
+            font-size: 2.5rem;
+        }
+
+        .sticker-heart {
+            color: var(--hot-pink);
+            font-size: 2.5rem;
+        }
+
+        .sticker-arrow {
+            color: var(--teal);
+            font-size: 2.5rem;
+        }
+
+        .sticker-circle {
+            width: 40px;
+            height: 40px;
+            border: 3px dashed var(--mustard);
+            border-radius: 50%;
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        /* Animations */
+        .float-in {
+            animation: floatIn 0.8s ease-out forwards;
+        }
+
+        @keyframes floatIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rotate-in {
+            animation: rotateIn 0.8s ease-out forwards;
+        }
+
+        @keyframes rotateIn {
+            0% {
+                opacity: 0;
+                transform: rotate(-5deg) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+        
+        /* Doodle underline */
+        .doodle-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .doodle-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='6' viewBox='0 0 100 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,3 C10,0 20,6 30,3 C40,0 50,6 60,3 C70,0 80,6 90,3 C95,1.5 100,4.5 100,3' stroke='%23FF5E78' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 6px;
+        }
+        
+        /* Value note styles */
+        .value-note {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            transform: rotate(-1deg);
+        }
+        
+        .value-note:hover {
+            transform: rotate(0) translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .value-note::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 20px;
+            background-color: rgba(0,0,0,0.1);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        }
+        
+        .value-note:nth-child(even) {
+            transform: rotate(1deg);
+        }
+        
+        .value-note:nth-child(even):hover {
+            transform: rotate(0) translateY(-5px);
+        }
+        
+        /* Photo frame styles */
+        .photo-frame {
+            position: relative;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border: 10px solid white;
+        }
+        
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            z-index: 1;
+        }
+        
+        .photo-frame::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transform: rotate(2deg);
+            z-index: 1;
+        }
+        
+        /* Handwritten marker styles */
+        .marker-underline {
+            position: relative;
+            display: inline;
+            z-index: 1;
+        }
+        
+        .marker-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--hot-pink);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .marker-underline-teal::after {
+            background-color: var(--teal);
+        }
+        
+        .marker-underline-mustard::after {
+            background-color: var(--mustard);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .value-note {
+                margin-bottom: 3rem;
+            }
+            
+            .page-container {
+                padding: 1.5rem 0.5rem;
+            }
+            section, .quote-card, .sticky-note, .value-card {
+                padding: 1.25rem 0.5rem;
+            }
+        }
+
+        .divider {
+            display: flex;
+            justify-content: center;
+            margin: 2.5rem 0;
+        }
+
+        /* --- Logo & Navigation --- */
+        .logo {
+            font-family: 'Pacifico', cursive;
+            color: #FF5E78;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0 #fff7e0, 4px 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .navbar {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .nav-btn {
+            background: #FF6F61;
+            color: #fff;
+            border-radius: 1.5rem;
+            padding: 0.75rem 2rem;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.2s;
+            border: none;
+            margin-right: 0.5rem;
+        }
+        .nav-btn:nth-child(2) { background: #FF5E78; }
+        .nav-btn:nth-child(3) { background: #E9C46A; color: #444; }
+        .nav-btn:nth-child(4) { background: #2EC4B6; }
+        .nav-btn:nth-child(5) { background: #FF5E78; }
+
+        .nav-btn:hover {
+            background: #83A2C3;
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        /* --- Section Headings --- */
+        .hero-title {
+            font-family: 'Pacifico', cursive;
+            color: #FF5E78;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 8px;
+            background: #fff7e0;
+            position: absolute;
+            left: 10%;
+            bottom: -8px;
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        /* --- Polaroid Photo --- */
+        .polaroid {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+            padding: 1rem 1rem 2.5rem 1rem;
+            margin-bottom: 1rem;
+            transform: rotate(-2deg);
+            max-width: 220px;
+        }
+        .polaroid-caption {
+            font-family: 'Shadows Into Light', cursive;
+            color: #888;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        /* --- Sticky Notes & Value Cards --- */
+        .sticky-note, .value-card {
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 1.2rem;
+            transform: rotate(-1.5deg);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+        }
+        .sticky-note {
+            background: #FF5E78;
+            color: #fff;
+        }
+        .value-card {
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .value-card.empathy { background: #FF5E78; color: #fff; }
+        .value-card.vulnerability { background: #2EC4B6; color: #fff; }
+        .value-card.realness { background: #E9C46A; color: #444; }
+
+        /* --- Quotes --- */
+        .quote-card {
+            background: #83A2C3;
+            color: #fff;
+            border-radius: 10px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.3rem;
+            position: relative;
+            margin: 2rem 0;
+            padding: 2rem 1.5rem;
+        }
+        .quote-card::before {
+            content: '“';
+            font-size: 4rem;
+            color: #fff7e0;
+            opacity: 0.4;
+            position: absolute;
+            left: 1rem;
+            top: 0.5rem;
+        }
+        .quote-card::after {
+            content: '”';
+            font-size: 4rem;
+            color: #fff7e0;
+            opacity: 0.4;
+            position: absolute;
+            right: 1rem;
+            bottom: 0.5rem;
+        }
+        
+        /* --- Footer --- */
+        .footer {
+            background: #2EC4B6;
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            margin-top: 3rem;
+        }
+        .footer .social-icons {
+            margin-top: 1rem;
+        }
+        .footer .social-icons a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        .footer .social-icons a:hover {
+            color: #FF5E78;
+        }
+
+        /* Prevent dark mode on "This Week's Post" sticky note */
+        .sticky-note.no-dark,
+        body.dark-mode .sticky-note.no-dark {
+            background: #2a3140 !important;
+            color: #fff !important;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        }
+
+        /* --- Dark mode styles --- */
+        body.dark-mode {
+            background-image: none;
+            background: #222;
+            color: #faf6f1;
+        }
+
+        body.dark-mode .sticky-note,
+        body.dark-mode .value-card.empathy {
+            background: #b44a5c;
+            color: #fff;
+        }
+
+        body.dark-mode .value-card.vulnerability {
+            background: #217e77;
+            color: #fff;
+        }
+
+        body.dark-mode .value-card.realness {
+            background: #bfa44a;
+            color: #222;
+        }
+
+        body.dark-mode .quote-card {
+            background: #4d5e73;
+            color: #fff;
+        }
+
+        body.dark-mode .journal-page,
+        body.dark-mode .photo-frame,
+        body.dark-mode .polaroid {
+            background: #333;
+            color: #faf6f1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        }
+
+        body.dark-mode .footer {
+            background: #217e77;
+            color: #fff;
+        }
+
+        body.dark-mode .nav-btn {
+            background: #444 !important;
+            color: #fff !important;
+        }
+
+        body.dark-mode .nav-btn:hover {
+            background: #b44a5c !important;
+            color: #fff !important;
+        }
+
+        body.dark-mode .logo {
+            color: #FF5E78;
+            text-shadow: 2px 2px 0 #333, 4px 4px 8px rgba(0,0,0,0.18);
+        }
+
+        body.dark-mode .sticky-note.no-dark {
+            background: #2a3140 !important;
+            color: #fff !important;
+        }
+
+        /* --- Dark mode styles: Monochrome like index.css --- */
+body.dark-mode,
+html body.dark-mode,
+body.dark-mode * {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Container backgrounds */
+body.dark-mode .page-container,
+body.dark-mode main,
+body.dark-mode .notebook,
+body.dark-mode .sticky-note,
+body.dark-mode .polaroid,
+body.dark-mode .torn-paper,
+body.dark-mode .taped-photo,
+body.dark-mode .journal-page,
+body.dark-mode .quote-card,
+body.dark-mode .podcast-player,
+html body.dark-mode .page-container,
+html body.dark-mode main {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #333333 !important;
+}
+
+/* All Tailwind color classes become monochrome */
+body.dark-mode .bg-\[\#FF5E78\],
+body.dark-mode .bg-\[\#FF6F61\],
+body.dark-mode .bg-\[\#2EC4B6\],
+body.dark-mode .bg-\[\#E9C46A\],
+body.dark-mode .bg-\[\#83A2C3\],
+body.dark-mode [class*="bg-"],
+html body.dark-mode .bg-\[\#FF5E78\],
+html body.dark-mode .bg-\[\#FF6F61\] { 
+    background: #2a2a2a !important; 
+    color: #ffffff !important;
+}
+
+/* Navigation and buttons */
+body.dark-mode .nav-btn,
+body.dark-mode button,
+body.dark-mode .custom-play-btn,
+body.dark-mode .btn-submit,
+html body.dark-mode .nav-btn,
+html body.dark-mode button {
+    background: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+body.dark-mode .nav-btn:hover,
+body.dark-mode button:hover,
+body.dark-mode .custom-play-btn:hover {
+    background: #444444 !important;
+    color: #ffffff !important;
+}
+
+/* Text colors - all become white */
+body.dark-mode .text-\[\#FF5E78\],
+body.dark-mode .text-\[\#2EC4B6\],
+body.dark-mode .text-\[\#E9C46A\],
+body.dark-mode .text-\[\#83A2C3\],
+body.dark-mode .text-\[\#FF6F61\],
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-600,
+body.dark-mode .text-gray-500,
+body.dark-mode [class*="text-"],
+html body.dark-mode .text-\[\#FF5E78\],
+html body.dark-mode .text-\[\#2EC4B6\] {
+    color: #ffffff !important;
+}
+
+/* White backgrounds become dark */
+body.dark-mode .bg-white,
+body.dark-mode .bg-gray-200,
+html body.dark-mode .bg-white {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+/* Images and borders */
+body.dark-mode img {
+    border-color: #444444 !important;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+/* Decorative elements */
+body.dark-mode .decorative-circle {
+    background: #333333 !important;
+    opacity: 0.3 !important;
+}
+
+/* Form elements */
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #777777 !important;
+    background: #333333 !important;
+}
+
+/* Links */
+body.dark-mode a {
+    color: #ffffff !important;
+}
+
+body.dark-mode a:hover {
+    color: #cccccc !important;
+}
+
+/* Shadows become darker */
+body.dark-mode .shadow-md,
+body.dark-mode .shadow-lg {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.8) !important;
+}
+
+/* Header and footer */
+body.dark-mode header,
+body.dark-mode footer {
+    background: #0a0a0a !important;
+    color: #ffffff !important;
+}
+
+/* Dark mode toggle specific styling */
+body.dark-mode #darkModeToggle {
+    background: #333333 !important;
+    color: #ffffff !important;
+    border: 1px solid #555555 !important;
+}
+
+/* Override any remaining colored elements */
+body.dark-mode * {
+    border-color: #444444 !important;
+}
+
+body.dark-mode *:not(img):not(svg):not(path) {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+/* --- Force all Tailwind arbitrary color backgrounds/text to monochrome in dark mode --- */
+body.dark-mode [class*="bg-[#"] {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+body.dark-mode [class*="text-[#"] {
+    color: #fff !important;
+}
+body.dark-mode [class*="border-[#"] {
+    border-color: #444 !important;
+}
+
+/* --- Dark mode toggle button style --- */
+.dark-toggle-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: #f3f3f3;
+    color: #222;
+    border: none;
+    border-radius: 9999px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
+}
+.dark-toggle-btn:hover {
+    background: #FF5E78;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .dark-toggle-btn { right: 1rem; top: 1rem; }
+}
+

@@ -1,0 +1,884 @@
+/*
+Theme Name: My Custom Theme
+Author: Leya
+Description: Converted full-stack site to WP theme
+Version: 1.0
+*/
+
+        /* Custom Variables */
+        :root {
+            --coral: #FF6F61;
+            --hot-pink: #FF5E78;
+            --teal: #2EC4B6;
+            --mustard: #E9C46A;
+            --dusty-blue: #83A2C3;
+            --kraft-brown: #B68D40;
+            --light-purple: #9D8DF1;
+            --sage-green: #8DB596;
+        }
+        
+        /* Base Styles */
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f0f0f0' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        .handwritten {
+            font-family: 'Shadows Into Light', cursive;
+        }
+        
+        .handwritten-alt {
+            font-family: 'Gloria Hallelujah', cursive;
+        }
+        
+        .handwritten-bold {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .handwritten-casual {
+            font-family: 'Patrick Hand', cursive;
+        }
+        
+        .typewriter {
+            font-family: 'Special Elite', cursive;
+        }
+        
+        .serif {
+            font-family: 'Lora', serif;
+        }
+        
+        /* Scrapbook Elements */
+        .sticky-note {
+            position: relative;
+            padding: 1.5rem;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+            transform: rotate(1deg);
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-note:hover {
+            transform: rotate(-1deg) translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .sticky-note::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 20px;
+            background-color: rgba(0,0,0,0.1);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 1rem;
+            padding-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transform: rotate(2deg);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .polaroid-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .torn-paper {
+            position: relative;
+            background: white;
+        }
+        
+        .torn-paper::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 C30,20 70,0 100,10 L100,20 L0,20 Z' fill='white'/%3E%3C/svg%3E");
+            background-size: 100px 20px;
+            background-repeat: repeat-x;
+        }
+        
+        .washi-tape {
+            position: relative;
+        }
+        
+        .washi-tape::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: var(--teal);
+            opacity: 0.7;
+            transform: rotate(-2deg);
+            z-index: -1;
+        }
+        
+        .washi-tape-right::before {
+            left: auto;
+            right: 20px;
+            background-color: var(--hot-pink);
+            transform: rotate(2deg);
+        }
+        
+        .washi-tape-bottom::before {
+            top: auto;
+            bottom: -15px;
+            background-color: var(--mustard);
+        }
+        
+        .taped-photo {
+            position: relative;
+        }
+        
+        .taped-photo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30%;
+            height: 20px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Doodle Elements */
+        .doodle-star {
+            position: relative;
+        }
+        
+        .doodle-star::after {
+            content: '★';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--hot-pink);
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        
+        .doodle-heart {
+            position: relative;
+        }
+        
+        .doodle-heart::after {
+            content: '♥';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--hot-pink);
+            bottom: -10px;
+            right: -10px;
+            transform: rotate(-5deg);
+        }
+        
+        .doodle-arrow {
+            position: relative;
+        }
+        
+        .doodle-arrow::after {
+            content: '→';
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--teal);
+            bottom: 5px;
+            right: -25px;
+        }
+        
+        .doodle-circle {
+            position: relative;
+        }
+        
+        .doodle-circle::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--coral);
+            border-radius: 50%;
+            top: -10px;
+            right: -10px;
+            transform: rotate(15deg);
+        }
+        
+        /* Navigation & Layout */
+        .nav-item {
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .nav-item:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+        
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Coach card styles */
+        .coach-card {
+            position: relative;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+        
+        .coach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .coach-card:nth-child(odd) {
+            transform: rotate(1deg);
+        }
+        
+        .coach-card:nth-child(odd):hover {
+            transform: rotate(0) translateY(-5px);
+        }
+        
+        .coach-card:nth-child(even) {
+            transform: rotate(-1deg);
+        }
+        
+        .coach-card:nth-child(even):hover {
+            transform: rotate(0) translateY(-5px);
+        }
+        
+        /* List layout for coaches */
+        .coaches-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem; /* space between coach cards */
+            align-items: stretch;
+        }
+
+        .coach-card {
+            width: 100%;
+            margin: 0;
+            /* Remove transforms for list layout */
+            transform: none !important;
+        }
+        
+        /* Hero section styles */
+        .hero-title {
+            position: relative;
+            display: inline-block;
+            transform: rotate(-2deg);
+            z-index: 2;
+        }
+        
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: var(--teal);
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .hero-subtitle {
+            position: relative;
+            display: inline-block;
+            transform: rotate(1deg);
+            margin-top: -15px;
+        }
+        
+        /* Tape styles */
+        .tape {
+            position: absolute;
+            height: 30px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .tape-top-left {
+            width: 40%;
+            top: -15px;
+            left: 10px;
+            transform: rotate(-5deg);
+        }
+        
+        .tape-top-right {
+            width: 40%;
+            top: -15px;
+            right: 10px;
+            transform: rotate(5deg);
+        }
+        
+        .tape-bottom-left {
+            width: 40%;
+            bottom: -15px;
+            left: 10px;
+            transform: rotate(5deg);
+        }
+        
+        .tape-bottom-right {
+            width: 40%;
+            bottom: -15px;
+            right: 10px;
+            transform: rotate(-5deg);
+        }
+        
+        /* Sticker elements */
+        .sticker {
+            position: absolute;
+            z-index: 2;
+            transform: rotate(10deg);
+            transition: all 0.3s ease;
+        }
+
+        .sticker:hover {
+            transform: rotate(0) scale(1.1);
+        }
+
+        .sticker-star {
+            color: var(--hot-pink);
+            font-size: 2.5rem;
+        }
+
+        .sticker-heart {
+            color: var(--hot-pink);
+            font-size: 2.5rem;
+        }
+
+        .sticker-arrow {
+            color: var(--teal);
+            font-size: 2.5rem;
+        }
+
+        .sticker-circle {
+            width: 40px;
+            height: 40px;
+            border: 3px dashed var(--mustard);
+            border-radius: 50%;
+        }
+        
+        /* Decorative elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        /* Animations */
+        .float-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: floatIn 0.8s ease-out forwards;
+        }
+
+        @keyframes floatIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rotate-in {
+            opacity: 0;
+            transform: rotate(-5deg) scale(0.9);
+            animation: rotateIn 0.8s ease-out forwards;
+        }
+
+        @keyframes rotateIn {
+            0% {
+                opacity: 0;
+                transform: rotate(-5deg) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+        
+        /* Doodle underline */
+        .doodle-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .doodle-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='6' viewBox='0 0 100 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,3 C10,0 20,6 30,3 C40,0 50,6 60,3 C70,0 80,6 90,3 C95,1.5 100,4.5 100,3' stroke='%23FF5E78' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: 100% 6px;
+        }
+        
+        /* Handwritten marker styles */
+        .marker-underline {
+            position: relative;
+            display: inline;
+            z-index: 1;
+        }
+        
+        .marker-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--hot-pink);
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .marker-underline-teal::after {
+            background-color: var(--teal);
+        }
+        
+        .marker-underline-mustard::after {
+            background-color: var(--mustard);
+        }
+        
+        /* Polaroid frame styles */
+        .polaroid-frame {
+            background: white;
+            padding: 1rem;
+            padding-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .polaroid-frame::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40%;
+            height: 30px;
+            background-color: rgba(255,255,255,0.6);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            z-index: 1;
+        }
+        
+        .polaroid-frame:nth-child(even)::before {
+            left: auto;
+            right: 20px;
+            transform: rotate(2deg);
+        }
+        
+        .polaroid-image {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .polaroid-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        /* Paper clip styles */
+        .paper-clip {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            border: 3px solid #888;
+            border-radius: 15px 15px 0 0;
+            top: -30px;
+            left: 20px;
+            transform: rotate(-10deg);
+            z-index: 2;
+        }
+        
+        .paper-clip::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            border: 3px solid #888;
+            border-radius: 10px 10px 0 0;
+            top: 10px;
+            left: 5px;
+        }
+        
+        .paper-clip-right {
+            left: auto;
+            right: 20px;
+            transform: rotate(10deg);
+        }
+        
+        /* Coach card variations */
+        .coach-card-1 {
+            border-top: 15px solid var(--hot-pink);
+        }
+        
+        .coach-card-2 {
+            border-left: 15px solid var(--teal);
+        }
+        
+        .coach-card-3 {
+            border-bottom: 15px solid var(--mustard);
+        }
+        
+        .coach-card-4 {
+            border-right: 15px solid var(--dusty-blue);
+        }
+        
+        .coach-card-5 {
+            border-top: 15px solid var(--light-purple);
+        }
+        
+        .coach-card-6 {
+            border-left: 15px solid var(--sage-green);
+        }
+        
+        /* Note paper styles */
+        .note-paper {
+            background-color: white;
+            padding: 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .note-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 100% 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .note-paper-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Notebook hole styles */
+        .notebook-holes {
+            position: absolute;
+            left: -10px;
+            top: 0;
+            height: 100%;
+            width: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .notebook-hole {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Button styles */
+        .btn-listen {
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-listen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-listen:hover::before {
+            left: 0;
+        }
+        
+        .btn-listen:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Coach image placeholder */
+        .coach-image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        /* Staggered layout */
+        .staggered-layout {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+        }
+        
+        .staggered-layout > div:nth-child(odd) {
+            grid-column: 1 / span 10;
+        }
+        
+        .staggered-layout > div:nth-child(even) {
+            grid-column: 3 / span 10;
+        }
+        
+        @media (min-width: 768px) {
+            .staggered-layout > div:nth-child(odd) {
+                grid-column: 1 / span 7;
+            }
+            
+            .staggered-layout > div:nth-child(even) {
+                grid-column: 6 / span 7;
+            }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+
+/* Dark mode styles - Complete monochrome with maximum specificity */
+body.dark-mode,
+html body.dark-mode,
+body.dark-mode * {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+/* Container backgrounds */
+body.dark-mode .page-container,
+body.dark-mode main,
+body.dark-mode .notebook,
+body.dark-mode .sticky-note,
+body.dark-mode .polaroid,
+body.dark-mode .torn-paper,
+body.dark-mode .taped-photo,
+body.dark-mode .journal-page,
+body.dark-mode .quote-card,
+body.dark-mode .podcast-player,
+html body.dark-mode .page-container,
+html body.dark-mode main {
+    background: #1a1a1a !important;
+    color: #fff !important;
+    border-color: #333 !important;
+}
+
+/* All Tailwind color classes become monochrome */
+body.dark-mode .bg-\[\#FF5E78\],
+body.dark-mode .bg-\[\#FF6F61\],
+body.dark-mode .bg-\[\#2EC4B6\],
+body.dark-mode .bg-\[\#E9C46A\],
+body.dark-mode .bg-\[\#83A2C3\],
+body.dark-mode [class*="bg-"],
+html body.dark-mode .bg-\[\#FF5E78\],
+html body.dark-mode .bg-\[\#FF6F61\] {
+    background: #2a2a2a !important;
+    color: #fff !important;
+}
+
+/* Navigation and buttons */
+body.dark-mode .nav-item,
+body.dark-mode button,
+body.dark-mode .custom-play-btn,
+body.dark-mode .btn-submit,
+html body.dark-mode .nav-item,
+html body.dark-mode button {
+    background: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+body.dark-mode .nav-item:hover,
+body.dark-mode button:hover,
+body.dark-mode .custom-play-btn:hover {
+    background: #444 !important;
+    color: #fff !important;
+}
+
+/* Text colors - all become white */
+body.dark-mode .text-\[\#FF5E78\],
+body.dark-mode .text-\[\#2EC4B6\],
+body.dark-mode .text-\[\#E9C46A\],
+body.dark-mode .text-\[\#83A2C3\],
+body.dark-mode .text-\[\#FF6F61\],
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-600,
+body.dark-mode .text-gray-500,
+body.dark-mode [class*="text-"],
+html body.dark-mode .text-\[\#FF5E78\],
+html body.dark-mode .text-\[\#2EC4B6\] {
+    color: #fff !important;
+}
+
+/* White backgrounds become dark */
+body.dark-mode .bg-white,
+body.dark-mode .bg-gray-200,
+html body.dark-mode .bg-white {
+    background: #1a1a1a !important;
+    color: #fff !important;
+}
+
+/* Images and borders */
+body.dark-mode img {
+    border-color: #444 !important;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+/* Decorative elements */
+body.dark-mode .decorative-circle {
+    background: #333 !important;
+    opacity: 0.3 !important;
+}
+
+/* Form elements */
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #2a2a2a !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #777 !important;
+    background: #333 !important;
+}
+
+/* Links */
+body.dark-mode a {
+    color: #fff !important;
+}
+
+body.dark-mode a:hover {
+    color: #ccc !important;
+}
+
+/* Shadows become darker */
+body.dark-mode .shadow-md,
+body.dark-mode .shadow-lg {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.8) !important;
+}
+
+/* Header and footer */
+body.dark-mode header,
+body.dark-mode footer {
+    background: #0a0a0a !important;
+    color: #fff !important;
+}
+
+/* Dark mode toggle specific styling */
+body.dark-mode #darkModeToggle {
+    background: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+}
+
+/* Override any remaining colored elements */
+body.dark-mode * {
+    border-color: #444 !important;
+}
+
+body.dark-mode *:not(img):not(svg):not(path) {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+/* --- Force all Tailwind arbitrary color backgrounds/text to monochrome in dark mode --- */
+body.dark-mode [class*="bg-[#"] {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+body.dark-mode [class*="text-[#"] {
+    color: #fff !important;
+}
+body.dark-mode [class*="border-[#"] {
+    border-color: #444 !important;
+}
+
+/* --- Dark mode toggle button style --- */
+.dark-toggle-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: #f3f3f3;
+    color: #222;
+    border: none;
+    border-radius: 9999px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
+}
+.dark-toggle-btn:hover {
+    background: #FF5E78;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .dark-toggle-btn { right: 1rem; top: 1rem; }
+}
