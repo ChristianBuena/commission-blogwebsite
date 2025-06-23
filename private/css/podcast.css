@@ -1,0 +1,180 @@
+:root {
+    --color-cream: #faf7f2;
+    --color-soft-pink: #f8e1e4;
+    --color-muted-coral: #f5c0c0;
+    --color-kraft-brown: #c8b6a6;
+    --color-dark-text: #5a4d41;
+    --color-light-text: #8a7e74;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-dark-text);
+}
+
+.paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d1c8bd' fill-opacity='0.08'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.sidebar {
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar-item {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+    background-color: rgba(248, 225, 228, 0.3);
+}
+
+.sidebar-item.active {
+    border-left: 3px solid var(--color-muted-coral);
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--color-muted-coral);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f0b3b3;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--color-kraft-brown);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #baa996;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    border: 1px solid var(--color-kraft-brown);
+    color: var(--color-kraft-brown);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-kraft-brown);
+    color: white;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-draft {
+    background-color: #f0ebe5;
+    color: var(--color-kraft-brown);
+}
+
+.status-published {
+    background-color: #e5f0e9;
+    color: #5a8a70;
+}
+
+.status-scheduled {
+    background-color: #e5eaf0;
+    color: #5a708a;
+}
+
+.editor-content {
+    min-height: 300px;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.avatar {
+    background-color: var(--color-soft-pink);
+    color: var(--color-muted-coral);
+    font-weight: 600;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f9f5f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-kraft-brown);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b5a594;
+}
+
+/* Doodle-style icons */
+.doodle-icon {
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.audio-player {
+    background-color: #f9f5f1;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px dashed var(--color-kraft-brown);
+}
+
+.audio-player-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.audio-player-progress {
+    height: 6px;
+    background-color: #e2d9d0;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.audio-player-progress-bar {
+    height: 100%;
+    background-color: var(--color-muted-coral);
+    width: 30%;
+}
+
+.modal {
+    transition: opacity 0.3s ease;
+}
+
+table th {
+    font-weight: 600;
+    color: var(--color-light-text);
+}

@@ -1,0 +1,333 @@
+/* ...existing code... */
+
+/* Sidebar styles */
+.sidebar {
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    width: 260px;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+}
+
+.sidebar-link {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    padding: 13px 32px;
+    color: #222;
+    font-size: 1.13rem;
+    text-decoration: none;
+    border-radius: 12px 0 0 12px;
+    margin-bottom: 4px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.sidebar-link.active,
+.sidebar-link:hover {
+    background: #FFF0F3;
+    color: var(--muted-coral);
+}
+
+.sidebar-link .doodle-icon {
+    stroke: var(--dark-text);
+    stroke-width: 1.5;
+    fill: none;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover .doodle-icon,
+.sidebar-link.active .doodle-icon {
+    stroke: var(--muted-coral);
+}
+
+.sidebar-link-text {
+    display: inline;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 10px;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--muted-coral);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Responsive adjustments for sidebar */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+    .sidebar-link {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 60px;
+        min-width: 60px;
+    }
+    .sidebar-link {
+        padding: 12px 10px;
+        justify-content: center;
+    }
+    .sidebar-link-text {
+        display: none;
+    }
+    .sidebar-content {
+        padding: 0.5rem;
+    }
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        height: auto;
+        width: 100%;
+        min-width: 0;
+        z-index: 50;
+        border-radius: 18px 18px 0 0;
+        box-shadow: 0 -2px 16px rgba(255,94,120,0.07);
+    }
+    .sidebar-content {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem;
+        height: 60px;
+    }
+    .sidebar-link {
+        border-left: none;
+        border-top: 3px solid transparent;
+        border-radius: 12px 12px 0 0;
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        padding: 8px 6px;
+        justify-content: center;
+    }
+    .sidebar-link-text {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 70px;
+    }
+    .avatar {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-content {
+        padding: 0.2rem;
+        height: 48px;
+    }
+    .sidebar-link {
+        font-size: 0.95rem;
+        padding: 6px 2px;
+    }
+    .avatar {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    width: 260px;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+}
+
+.sidebar-link {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    padding: 13px 32px;
+    color: #222;
+    font-size: 1.13rem;
+    text-decoration: none;
+    border-radius: 12px 0 0 12px;
+    margin-bottom: 4px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.sidebar-link.active,
+.sidebar-link:hover {
+    background: #FFF0F3;
+    color: var(--muted-coral);
+}
+
+.sidebar-link .doodle-icon {
+    stroke: var(--dark-text);
+    stroke-width: 1.5;
+    fill: none;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover .doodle-icon,
+.sidebar-link.active .doodle-icon {
+    stroke: var(--muted-coral);
+}
+
+.sidebar-link-text {
+    display: inline;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 10px;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--muted-coral);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Responsive adjustments for sidebar */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+    .sidebar-link {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 60px;
+        min-width: 60px;
+    }
+    .sidebar-link {
+        padding: 12px 10px;
+        justify-content: center;
+    }
+    .sidebar-link-text {
+        display: none;
+    }
+    .sidebar-content {
+        padding: 0.5rem;
+    }
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        height: auto;
+        width: 100%;
+        min-width: 0;
+        z-index: 50;
+        border-radius: 18px 18px 0 0;
+        box-shadow: 0 -2px 16px rgba(255,94,120,0.07);
+    }
+    .sidebar-content {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem;
+        height: 60px;
+    }
+    .sidebar-link {
+        border-left: none;
+        border-top: 3px solid transparent;
+        border-radius: 12px 12px 0 0;
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        padding: 8px 6px;
+        justify-content: center;
+    }
+    .sidebar-link-text {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 70px;
+    }
+    .avatar {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-content {
+        padding: 0.2rem;
+        height: 48px;
+    }
+    .sidebar-link {
+        font-size: 0.95rem;
+        padding: 6px 2px;
+    }
+    .avatar {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ...existing code... */
